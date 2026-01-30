@@ -1,3 +1,7 @@
+# Lab 1 - MLOps Calculator
+# Student: Harini Vasisht
+# Date: January 30, 2026
+
 def fun1(x, y):
     """
     Adds two numbers together.
@@ -57,7 +61,11 @@ def fun4(x,y,z):
     total_sum = x + y + z
     return total_sum
 
-
+def fun5(x, y):
+    """Divide x by y with error handling for division by zero"""
+    if y == 0:
+        return "Error: Division by zero"
+    return x / y
 # f1_op = fun1(2,3)
 # f2_op = fun2(2,3)
 # f3_op = fun3(2,3)
