@@ -84,3 +84,17 @@ uvicorn main:app --reload
 - **Pydantic** — Data validation via Python type hints
 - **StandardScaler** — Normalizes features before inference
 - **pickle** — Serializes and deserializes the trained model
+
+## 📸 Screenshots
+
+### Frontend UI
+![UI Form](assets/Frontend%20UI.png)
+
+### Prediction Result
+![Prediction Result](assets/Prediction%20Results.png)
+
+### API Response
+![API Response](assets/api_response.png)
+
+### Swagger Docs
+![Swagger](assets/docs.png)
