@@ -21,6 +21,19 @@ I also enabled **S3 versioning**, which is useful in MLOps because it lets you t
 
 ---
 
+## Proof — AWS Console Screenshots
+
+### S3 Bucket
+![S3 Bucket](screenshots/s3-bucket.png)
+
+### VPC
+![VPC](screenshots/vpc.png)
+
+### Subnet
+![Subnet](screenshots/subnet.png)
+
+---
+
 ## How I Did It (Step by Step)
 
 ### 1. Installed Terraform on my Mac using Homebrew
