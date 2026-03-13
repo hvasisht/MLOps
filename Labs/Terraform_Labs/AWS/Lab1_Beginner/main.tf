@@ -1,30 +1,42 @@
 provider "aws" {
-    region = "us-east-1"
+  region = "us-west-2"
 }
 
-# resource "<provider>_<resource_type>" "<resource_name>" {
-#     <attribute> = "<value>"
-# }
+# S3 bucket for storing ML model artifacts
+resource "aws_s3_bucket" "ml_artifacts" {
+  bucket = "mlops-model-artifacts-harini"
 
-resource "aws_instance" "myec2" {
-    ami = "ami-0e2c8caa4b6378d8c"
-    instance_type = "t2.micro"
-    tags = {
-        Name = "myec2"
-    }
+  tags = {
+    Name        = "MLOps Model Artifacts"
+    Environment = "Dev"
+    Project     = "MLOps Lab"
+  }
 }
 
-resource "aws_subnet" "mysubnet1" {
-    vpc_id = aws_vpc.myvpc.id
-    cidr_block = "10.0.1.0/24"
-    tags = {
-        Name = "mysubnet1"
-    }
+# VPC for isolating ML workloads
+resource "aws_vpc" "ml_vpc" {
+  cidr_block = "10.1.0.0/16"
+
+  tags = {
+    Name = "mlops-vpc"
+  }
 }
 
-resource "aws_vpc" "myvpc" {
-    cidr_block = "10.0.0.0/16"
-    tags = {
-        Name = "myvpc"
-    }
+# Subnet within the VPC
+resource "aws_subnet" "ml_subnet" {
+  vpc_id     = aws_vpc.ml_vpc.id
+  cidr_block = "10.1.1.0/24"
+
+  tags = {
+    Name = "mlops-subnet"
+  }
+}
+
+# Enable versioning for ML model version tracking
+resource "aws_s3_bucket_versioning" "ml_artifacts_versioning" {
+  bucket = aws_s3_bucket.ml_artifacts.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
