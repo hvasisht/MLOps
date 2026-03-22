@@ -23,10 +23,10 @@ pip install wandb xgboost numpy
 ## W&B Dashboard Screenshots
 
 ### Training & Test Loss + Feature Importance Charts
-![Charts](screenshots/screenshot1.png)
+![Charts](Screenshots/screenshot1.png)
 
 ### Feature Importance (Custom Chart) + Confusion Matrix
-![Feature Importance and Confusion Matrix](screenshots/screenshot2.png)
+![Feature Importance and Confusion Matrix](Screenshots/screenshot2.png)
 
 ### Feature Importance Table
-![Feature Importance Table](screenshots/screenshot3.png)
+![Feature Importance Table](Screenshots/screenshot3.png)
